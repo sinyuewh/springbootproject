@@ -11,8 +11,6 @@ import net.sf.json.util.JSONUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.util.SerializationUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,8 +30,6 @@ public class StudentsController
     @Autowired
     private StudentsService studentsService;
 
-    @Autowired
-    private StringRedisTemplate stringRedisTemplate;
 
 
     //根据姓名和学号，返回学生列表 StudentsListDTO
@@ -49,9 +45,6 @@ public class StudentsController
     @PostMapping("/test")
     public HttpResult test()
     {
-        stringRedisTemplate.opsForValue().set("username","jinshouji",5);
-        stringRedisTemplate.opsForValue().set("password","123456");
-
-        return HttpResultUtil.success(redisConfig);
+        return HttpResultUtil.success();
     }
 }

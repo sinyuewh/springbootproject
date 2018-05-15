@@ -9,6 +9,9 @@ import com.jsj.common.bean.HttpResult;
  **/
 
 public class HttpResultUtil {
+    //禁止访问
+    public static int FORBIDDEN_VISIT = 403;
+
     //返回一个成功的ResultVO
     public static HttpResult success(Object object) {
         HttpResult resultVO = new HttpResult();

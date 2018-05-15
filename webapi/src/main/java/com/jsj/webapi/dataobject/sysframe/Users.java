@@ -6,6 +6,7 @@ import org.hibernate.annotations.*;
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * Created by jinshouji on 2018/4/30.
@@ -20,8 +21,9 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name="Users")
-public class Users
+public class Users implements Serializable
 {
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;                 //数据id
